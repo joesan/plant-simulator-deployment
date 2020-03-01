@@ -22,4 +22,4 @@ We will use pull based deployments for which we need [Flux](https://github.com/f
 
 Flux is a Kubernetes operator that can help you with pull based deployments. Have a look here to set-up [Flux](https://docs.fluxcd.io/en/latest/tutorials/get-started.html) on your cluster.
 
-TODO: How to compose and build the files?
+TODO: How to compose and build the files? As we want this to get execuited by flux when it connects and pulls the latest image!
