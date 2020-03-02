@@ -85,6 +85,51 @@ A few things to mention here:
 
 4. The --namespace=plant-simulator-ns is where you have installed flux into on your cluster
 
+So here are some logs on my Mac that shows the flux containers being set up and running:
+
+```
+Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-6955765f44-7z9rg           1/1     Running   0          104m
+kube-system   coredns-6955765f44-zv425           1/1     Running   0          104m
+kube-system   etcd-minikube                      1/1     Running   0          104m
+kube-system   kube-apiserver-minikube            1/1     Running   0          104m
+kube-system   kube-controller-manager-minikube   1/1     Running   0          104m
+kube-system   kube-proxy-wf4sq                   1/1     Running   0          104m
+kube-system   kube-scheduler-minikube            1/1     Running   0          104m
+kube-system   storage-provisioner                1/1     Running   1          104m
+Joes-MacBook-Pro:~ joesan$ kubectl create ns plant-simulator-ns
+namespace/plant-simulator-ns created
+Joes-MacBook-Pro:~ joesan$ export GHUSER="joesan"
+Joes-MacBook-Pro:~ joesan$ fluxctl install \
+> --git-user=${GHUSER} \
+> --git-email=${GHUSER}@users.noreply.github.com \
+> --git-url=git@github.com:${GHUSER}/plant-simulator-deployment \
+> --git-path=dev \
+> --git-readonly=true \
+> --manifest-generation=true \
+> --namespace=plant-simulator-ns | kubectl apply -f -
+serviceaccount/flux created
+clusterrole.rbac.authorization.k8s.io/flux created
+clusterrolebinding.rbac.authorization.k8s.io/flux created
+deployment.apps/flux created
+secret/flux-git-deploy created
+deployment.apps/memcached created
+service/memcached created
+Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
+NAMESPACE            NAME                               READY   STATUS              RESTARTS   AGE
+kube-system          coredns-6955765f44-7z9rg           1/1     Running             0          108m
+kube-system          coredns-6955765f44-zv425           1/1     Running             0          108m
+kube-system          etcd-minikube                      1/1     Running             0          108m
+kube-system          kube-apiserver-minikube            1/1     Running             0          108m
+kube-system          kube-controller-manager-minikube   1/1     Running             0          108m
+kube-system          kube-proxy-wf4sq                   1/1     Running             0          108m
+kube-system          kube-scheduler-minikube            1/1     Running             0          108m
+kube-system          storage-provisioner                1/1     Running             1          108m
+plant-simulator-ns   flux-5476b788b9-pgbmm              0/1     Running             0          22s
+plant-simulator-ns   memcached-86bdf9f56b-qc8vd         1/1     Running             0          22s
+```
+
 As a next step, you have to add the public key of your cluster to the GitHub project! 
 
 ```
@@ -104,9 +149,9 @@ That's pretty much it with respect to GitOps! A few more things are worth mentio
 ├── .flux.yaml
 ├── base
 │   ├── kustomization.yaml
-│   ├── plant-simulator-deployment.yml
-│   ├── plant-simulator-namespace.yml
-│   └── plant-simulator-service.yml
+│   ├── plant-simulator-deployment.yaml
+│   ├── plant-simulator-namespace.yaml
+│   └── plant-simulator-service.yaml
 ├── dev
 │   ├── flux-patch.yaml
 │   └── kustomization.yaml
