@@ -8,6 +8,18 @@ This project contains all it is necessary to run the [plant-simulator](https://g
 
 From the image description (sorry for the free hand drawing), you could see that GitOps paves the way for some read CD right after a CI.
 
+A typical workflow in this case (in this project) would look like the following:
+
+1. A developer works on a task in a specific branch of the [plant-simulator](https://github.com/joesan/plant-simulator) project and once he finishes his work, he sends a pull request to the owner or the team lead or someone who has merge rights into the master branch
+
+2. Assuming that the merge has happened, a CI pipeline kicks in and the usual ceremony happens (build, test, docker image, scan docker image for vulnerabilities, tag docker image and push to docker registry) and the image is deployed on your test or staging environment
+
+3. The business comes in and performs their ceremonies on the staging - UAT tests and sign off
+
+4. The tagged image from step 2 is then updated here in this project in one of the deployment files, depending on which application is being deployed
+
+5. Comit the deployment file and voila, your changes should be available in production within the next few minutes! It is here where the idea of GitOps really kick in. Good indeed or?
+
 ## Before you begin
 
 Make sure you have a Kubernetes cluster locally on your machine. The best option is to use Minikube. Make sure to follow [this documentation](https://kubernetes.io/docs/tasks/tools/install-minikube/)
