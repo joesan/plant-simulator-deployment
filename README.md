@@ -208,3 +208,28 @@ kubectl kustomize ./kubernetes > plant-simulator-k8s.yaml
 ```
 
 The result of the above command is a single yml file that contains all the necessary k8s resources in proper order for your Kubenetes cluster!
+
+## Tools Used
+
+* [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) - Local Kubernetes cluster
+
+* [Flux Kubernetes Operator](https://github.com/fluxcd/flux - The GitOps enabler
+
+## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joesan/plant-simulator/issues)
+
+For more information on how to contribute, have a look [here](https://github.com/joesan/plant-simulator/blob/master/CONTRIBUTING.md)
+
+## Authors / Maintainers
+
+* *Joesan*           - [Joesan @ GitHub](https://github.com/joesan/)
+
+See also the list of [contributors](https://github.com/joesan/plant-simulator/graphs/contributors) who helped.
+
+## License [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+The whole project is licensed under Apache License, Version 2.0. See [LICENSE.txt](./LICENSE.txt).
+
+## Acknowledgments
+
+* To everybody that helped in this project
+* The [Kustomize](https://kustomize.io/)
