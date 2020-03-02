@@ -5,8 +5,8 @@ metadata:
   namespace: plant-simulator-ns
 spec:
   selector:
-  matchLabels:
-    app: plant-simulator
+    matchLabels:
+      app: plant-simulator
   replicas: 1
   template:
     metadata:

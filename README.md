@@ -159,7 +159,7 @@ That's pretty much it with respect to GitOps! A few more things are worth mentio
 └── production
     ├── flux-patch.yaml
     ├── kustomization.yaml
-```
+``
 
 1. The base folder contains all the basic kubernetes manifests including the kustomization manifest.
 
@@ -167,8 +167,9 @@ That's pretty much it with respect to GitOps! A few more things are worth mentio
 
 3. The .flux.yaml is used by Flux to generate and update manifests. Its commands are run in the directory (dev or production). In this particular case, .flux.yaml tells Flux to generate manifests running kustomize build and update policy annotations and container images by editing flux-patch.yaml, which will implicitly applied to the manifests generated with kustomize build.
 
-## Build & compose the Kubernetes resources
-Since our kubernetes resources are scattered across different files for better organization, we need a way to deploy them in an order and in many big projects this could get out of control. Fortunately, there is a project called [kustomization](https://github.com/kubernetes-sigs/kustomize) that you can use to compose the different resources into one big yml file that you can use to apply to your Kubernetes cluster.
+## Build & compose the Kubernetes resources using Kustomize
+
+Since our kubernetes resources are scattered across different files, for better organization we need a way to deploy them in an order and in many big projects this could get soon out of control. Fortunately, there is a project called [kustomization](https://github.com/kubernetes-sigs/kustomize) that you can use to compose the different resources into one big yml file that you can use to apply to your Kubernetes cluster. This is not needed to run this project, but I'm documenting this here just for educational piurposes. Calling the kustomize build is taken care by the flux operator as discussed in the step above.
 
 Note: kubectl latest version contains kustomization, so no need of any additional installation!
 
@@ -179,7 +180,3 @@ kubectl kustomize ./kubernetes > plant-simulator-k8s.yaml
 ```
 
 The result of the above command is a single yml file that contains all the necessary k8s resources in proper order for your Kubenetes cluster!
-
-TODO: How to compose and build the files? As we want this to get execuited by flux when it connects and pulls the latest image!
-
-Test Test
