@@ -6,9 +6,9 @@ This project contains all it is necessary to run the [plant-simulator](https://g
 
 ![GitOps Workflow](https://github.com/joesan/plant-simulator-deployment/blob/master/GitOps_Workflow.JPG)
 
-From the image description (sorry for the free hand drawing), you could see that GitOps paves the way for some read CD right after a CI.
+From the image description (sorry for the free hand drawing), you could see that GitOps paves the way for some real CD right after a CI.
 
-A typical workflow in this case (in this project) would look like the following:
+A typical workflow in this case (in this project, but applies equally good to any project) would look like the following:
 
 1. A developer works on a task in a specific branch of the [plant-simulator](https://github.com/joesan/plant-simulator) project and once he finishes his work, he sends a pull request to the owner or the team lead or someone who has merge rights into the master branch
 
