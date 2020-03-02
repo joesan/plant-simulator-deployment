@@ -146,6 +146,7 @@ fluxctl sync --k8s-fwd-ns plant-simulator-ns
 
 That's pretty much it with respect to GitOps! A few more things are worth mentioning about the project structure:
 
+```
 ├── .flux.yaml
 ├── base
 │   ├── kustomization.yaml
@@ -158,6 +159,7 @@ That's pretty much it with respect to GitOps! A few more things are worth mentio
 └── production
     ├── flux-patch.yaml
     ├── kustomization.yaml
+```
 
 1. The base folder contains all the basic kubernetes manifests including the kustomization manifest.
 
