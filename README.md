@@ -167,7 +167,7 @@ That's pretty much it with respect to GitOps! A few more things are worth mentio
 └── production
     ├── flux-patch.yaml
     ├── kustomization.yaml
-``
+```
 
 1. The base folder contains all the basic kubernetes manifests including the kustomization manifest.
 
@@ -190,8 +190,10 @@ kube-system          kube-scheduler-minikube            1/1     Running   0     
 kube-system          storage-provisioner                1/1     Running   1          4h3m
 plant-simulator-ns   flux-5476b788b9-pgbmm              1/1     Running   0          135m
 plant-simulator-ns   memcached-86bdf9f56b-qc8vd         1/1     Running   0          135m
-plant-simulator-ns   plant-simulator-6d46dc89cb-f4bls   1/1     Running   0          40s   *This is my plant-simulator docker image *
+plant-simulator-ns   plant-simulator-6d46dc89cb-f4bls   1/1     Running   0          40s
 ```
+
+As you can see from the list of pods, our plant-simulator pod is up and running! 
 
 ## Build & compose the Kubernetes resources using Kustomize
 
