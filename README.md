@@ -1,6 +1,8 @@
 ### plant-simulator-deployment
 
-This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. This project contains all it is necessary to run the [plant-simulator](https://github.com/joesan/plant-simulator) application in a kubernetes cluster in the [GitOps](gitops.tech) way! 
+This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
+
+This project contains all it is necessary to run the [plant-simulator](https://github.com/joesan/plant-simulator) application in a kubernetes cluster - the [GitOps](gitops.tech) way! 
 
 ![GitOps Workflow](https://github.com/joesan/plant-simulator-deployment/blob/master/GitOps_Workflow.JPG)
 
