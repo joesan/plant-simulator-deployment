@@ -81,7 +81,9 @@ A few things to mention here:
 
 2. The --manifest-generation=true is needed because we are using Kustomize to compose the deployment
 
-3. The Yes. You can use the --git-readonly=true tells that Flux only has read access to your repo
+3. The --git-readonly=true tells that Flux only has read access to your repo
+
+4. The --namespace=plant-simulator-ns is where you have installed flux into on your cluster
 
 As a next step, you have to add the public key of your cluster to the GitHub project! 
 
