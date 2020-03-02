@@ -213,7 +213,7 @@ The result of the above command is a single yml file that contains all the neces
 
 * [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) - Local Kubernetes cluster
 
-* [Flux Kubernetes Operator](https://github.com/fluxcd/flux - The GitOps enabler
+* [Flux Kubernetes Operator](https://github.com/fluxcd/flux) - The GitOps enabler
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joesan/plant-simulator/issues)
 
