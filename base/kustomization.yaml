@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  # 0. Get the namespaces first
+  - plant-simulator-namespace.yaml
+  - monitoring/plant-simulator-monitoring-namespace.yaml
+  # 1. Set up monitoring services (prometheus)
+  - monitoring/prometheus/config-map.yaml
+  - monitoring/prometheus/prometheus-deployment.yaml
+  - monitoring/prometheus/prometheus-service.yaml
+
+  # 2. Set up monitoring services (grafana)
+  - monitoring/grafana/grrafana-deployment.yaml
+  - monitoring/grafana/grrafana-service.yaml
+
+  # 3. Set up Ingress services
+
+  # 4. Set up the application services (backend)
+  - plant-simulator-namespace.yaml
+  - plant-simulator-service.yaml
+  - plant-simulator-deployment.yaml
+
+  # 5. Set up the application services (frontend) [[ TODO ]]
