@@ -237,7 +237,7 @@ For more information on how to contribute, have a look [here](https://github.com
 
 * *Joesan*           - [Joesan @ GitHub](https://github.com/joesan/)
 
-See also the list of [contributors](https://github.com/joesan/plant-simulator/graphs/contributors) who helped.
+See also the list of [contributors](https://github.com/joesan/plant-simulator-deployment/graphs/contributors) who helped.
 
 ## License [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
