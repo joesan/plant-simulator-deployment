@@ -5,6 +5,7 @@ resources:
   # 0. Get the namespaces first
   - plant-simulator-namespace.yaml
   - monitoring/plant-simulator-monitoring-namespace.yaml
+
   # 1. Set up monitoring services (prometheus)
   - monitoring/prometheus/config-map.yaml
   - monitoring/prometheus/prometheus-deployment.yaml
@@ -15,6 +16,8 @@ resources:
   - monitoring/grafana/grrafana-service.yaml
 
   # 3. Set up Ingress services
+  - monitoring/plant-simulator-ingress-service.yaml
+  - monitoring/plant-simulator-ingress-deployment.yaml
 
   # 4. Set up the application services (backend)
   - plant-simulator-namespace.yaml
