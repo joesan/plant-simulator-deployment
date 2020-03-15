@@ -17,18 +17,18 @@ spec:
         paths: 
           - backend: 
               serviceName: grafana-ip-service
-              servicePort: 8080
+              servicePort: 8080 # Get this value from ConfigMap
 
     - host: prometheus.local
       http:
         paths: 
           - backend: 
               serviceName: prometheus-ip-service
-              servicePort: 8080
+              servicePort: 8080 # Get this value from ConfigMap
 
     - host: plant.simulator.ui.local
       http:
         paths: 
           - backend: 
               serviceName: plant-simulator-service
-              servicePort: 9000
+              servicePort: 9000 # Get this value from ConfigMap
