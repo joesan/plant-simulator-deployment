@@ -24,3 +24,10 @@ spec:
           - backend: 
               serviceName: prometheus-ip-service
               servicePort: 9090
+
+    - host: plant.simulator.ui.local
+      http:
+        paths: 
+          - backend: 
+              serviceName: plant-simulator-service
+              servicePort: 9090
