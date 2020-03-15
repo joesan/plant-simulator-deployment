@@ -1,9 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata: 
-  name: plant-simulator-ingress-service
+  name: plant-simulator-ingress
   namespace: plant-simulator-ns
   annotations:
+    ingress.kubernetes.io/enable-cors: "true"
     kubernetes.io/ingress.class: nginx
     # nginx.ingress.kubernetes.io/rewrite-target: /
     prometheus.io/scrape: 'true'
@@ -16,18 +17,18 @@ spec:
         paths: 
           - backend: 
               serviceName: grafana-ip-service
-              servicePort: 3000
+              servicePort: 8080
 
     - host: prometheus.local
       http:
         paths: 
           - backend: 
               serviceName: prometheus-ip-service
-              servicePort: 9090
+              servicePort: 8080
 
     - host: plant.simulator.ui.local
       http:
         paths: 
           - backend: 
               serviceName: plant-simulator-service
-              servicePort: 9090
+              servicePort: 9000
