@@ -1,4 +1,4 @@
-### plant-simulator-deployment
+### plant-simulator-deployment project structure
 
 Let us explore about how the folder structure is organized!
 
