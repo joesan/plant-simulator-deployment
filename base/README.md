@@ -6,10 +6,10 @@ Let us explore about how the folder structure is organized!
 ├── .flux.yaml
 ├── base
 │   ├── application
-│       ├── kustomization.yaml
 │       ├── plant-simulator-deployment.yaml
 │       ├── plant-simulator-namespace.yaml
 │       └── plant-simulator-service.yaml
+│   ├── kustomization.yaml
 │   ├── monitoring
 │       ├── todo.yaml
 │       ├── todo.yaml
