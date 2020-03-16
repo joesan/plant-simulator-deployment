@@ -46,7 +46,14 @@ Joes-MacBook-Pro:~ joesan$ minikube start --vm-driver=virtualbox
 Joes-MacBook-Pro:~ joesan$
 ```
 
-Now let us see what the kubectl get pods command brings up:
+NOTE: Make sure to ebnable the NGINX Ingress controller as we need Ingress later on for routing our requests to the application services! Run the following command:
+
+```
+minikube addons enable ingress
+
+```
+
+Now let us see what the kubectl get pods command brings up (Note that the NGINX controller is also running now):
 
 ```
 Joes-MacBook-Pro:deploy joesan$ kubectl get pods --all-namespaces
@@ -57,6 +64,7 @@ kube-system   etcd-minikube                      1/1     Running   0          69
 kube-system   kube-apiserver-minikube            1/1     Running   0          69s
 kube-system   kube-controller-manager-minikube   1/1     Running   0          69s
 kube-system   kube-proxy-84lnn                   1/1     Running   0          62s
+kube-system   nginx-ingress-controller-s         1/1     Running   0          2m26s
 kube-system   kube-scheduler-minikube            1/1     Running   0          69s
 kube-system   storage-provisioner                1/1     Running   0          69s
 Joes-MacBook-Pro:deploy joesan$
