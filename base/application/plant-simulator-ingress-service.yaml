@@ -26,7 +26,7 @@ spec:
               serviceName: prometheus-ip-service
               servicePort: 8080 # Get this value from ConfigMap
 
-    - host: plant.simulator.ui.local
+    - host: plant-simulator.local
       http:
         paths: 
           - backend: 
