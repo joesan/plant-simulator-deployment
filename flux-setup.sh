@@ -2,8 +2,12 @@
 
 kubectl create ns plant-simulator-ns
 
+# Enable ingress
+minikube addons enable ingress
+
 export GHUSER="joesan"
 
+# Attach the project to the Flux operator
 fluxctl install \
 --git-user=${GHUSER} \
 --git-email=${GHUSER}@users.noreply.github.com \
