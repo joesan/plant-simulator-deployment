@@ -7,10 +7,10 @@ metadata:
     name: plant-simulator-service
 spec:
   ports:
-    - port: 9000 # Get this value from ConfigMap
-      targetPort: 9000 # Get this value from ConfigMap
+    - port: 9000 
+      targetPort: 9000 
       protocol: TCP
       name: plant-simulator-service-port
   selector:
     app: plant-simulator
-  type: LoadBalancer
+  type: NodePort
