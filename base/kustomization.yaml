@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   # 0. Get the namespaces first
-  - application/plant-simulator-namespace.yaml
+  #- application/plant-simulator-namespace.yaml
   - monitoring/plant-simulator-monitoring-namespace.yaml
 
   # 1. Set up monitoring services (prometheus)
