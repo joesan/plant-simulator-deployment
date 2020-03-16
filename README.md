@@ -195,7 +195,7 @@ That's pretty much it with respect to GitOps!
 
 ## Useful Hints & commands
 
-1. Check the logs of the flux operator:
+-> Check the logs of the flux operator:
 
 ```
 Joes-MacBook-Pro:deploy joesan$ kubectl logs -n plant-simulator-ns flux-5476b788b9-g7xtn
@@ -203,11 +203,10 @@ Joes-MacBook-Pro:deploy joesan$ kubectl logs -n plant-simulator-ns flux-5476b788
 
 Where the ```flux-5476b788b9-g7xtn``` is the name of the flux operator pod running on your Kubernetes cluster. You can get this name by listing for all the pods in your cluster:
 
+-> Get all the pods running in the cluster
 ```
 Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
 ```
-
-Look for thee one that starts with flux-******
 
 ## Build & compose the Kubernetes resources using Kustomize
 
