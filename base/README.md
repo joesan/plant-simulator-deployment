@@ -1,6 +1,6 @@
-### plant-simulator-deployment architecture
+### plant-simulator-deployment
 
-A few more things are worth mentioning about the project structure:
+Let us explore about how the folder structure is organized!
 
 ```
 ├── .flux.yaml
@@ -43,9 +43,11 @@ plant-simulator-ns   plant-simulator-6d46dc89cb-f4bls   1/1     Running   0     
 
 As you can see from the list of pods, our plant-simulator pod is up and running!
 
-<< TODO >> Document how the monitoring with prometheus & grafana dashboards work.
+## Hostname Access
 
-Once you have everything set up and running on Minikube, there is this one last step that needs to be done. If you want your application to be reachable via a hostname instead of the IP address, where the hostname is configured in the [ingress rule configuration file](https://github.com/joesan/plant-simulator-deployment/blob/master/base/application/plant-simulator-ingress-service.yaml), we need to now add the hostname / ip mapping to the /etc/hosts file on your machine or to be more precisely, to the machine where your kubernetes cluster is running. In my case it is the Minikube cluster running on my Mac!
+Once you have everything set up and running on Minikube, there is this one last step that needs to be done. If you want your application to be reachable via a hostname instead of the IP address, where the hostname is configured in the [ingress rule configuration file](https://github.com/joesan/plant-simulator-deployment/blob/master/base/application/plant-simulator-ingress-service.yaml). 
+
+We need to now add the hostname / ip mapping to the /etc/hosts file on your machine or to be more precisely, to the machine where your kubernetes cluster is running. In my case it is the Minikube cluster running on my Mac!
 
 ```
 Joes-MacBook-Pro:~ joesan$ kubectl get ingress --all-namespaces
