@@ -28,7 +28,8 @@ spec:
 
     - host: plant.simulator.local
       http:
-        paths: 
-          - backend: 
+        paths:
+          - path: /plant-simulator
+            backend: 
               serviceName: plant-simulator-service
               servicePort: 9000 
