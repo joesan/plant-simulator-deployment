@@ -97,6 +97,21 @@ fluxctl install \
 --namespace=plant-simulator-ns | kubectl apply -f -
 ```
 
+Alternatively, I have a script that does both the above two steps of creating the namespace and setting up the flux operator for this project. Just run the script as beloiw:
+
+```
+Joes-MacBook-Pro:plant-simulator-deployment joesan$ sh flux-setup.sh
+namespace/plant-simulator-ns created
+serviceaccount/flux created
+clusterrole.rbac.authorization.k8s.io/flux created
+clusterrolebinding.rbac.authorization.k8s.io/flux created
+deployment.apps/flux created
+secret/flux-git-deploy created
+deployment.apps/memcached created
+service/memcached created
+Joes-MacBook-Pro:plant-simulator-deployment joesan$
+```
+
 A few things to mention here:
 
 1. The --git-path refers to the folder in your GitHub repo where flux should look for the yaml files, here we use the base folder path
