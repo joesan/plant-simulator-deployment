@@ -191,48 +191,9 @@ So we are pretty much done. Seems flux is configured to read the changes on your
 fluxctl sync --k8s-fwd-ns plant-simulator-ns
 ```
 
-That's pretty much it with respect to GitOps! A few more things are worth mentioning about the project structure:
+That's pretty much it with respect to GitOps! 
 
-```
-├── .flux.yaml
-├── base
-│   ├── kustomization.yaml
-│   ├── plant-simulator-deployment.yaml
-│   ├── plant-simulator-namespace.yaml
-│   └── plant-simulator-service.yaml
-├── dev
-│   ├── flux-patch.yaml
-│   └── kustomization.yaml
-└── production
-    ├── flux-patch.yaml
-    ├── kustomization.yaml
-```
-
-1. The base folder contains all the basic kubernetes manifests including the kustomization manifest.
-
-2. The dev and production folders depends on the base folder and shares the manifest definitions, while overriding certain parts of it as defined in the flux-patch.yaml
-
-3. The .flux.yaml is used by Flux to generate and update manifests. Its commands are run in the directory (dev or production). In this particular case, .flux.yaml tells Flux to generate manifests running kustomize build and update policy annotations and container images by editing flux-patch.yaml, which will implicitly applied to the manifests generated with kustomize build.
-
-If all goes well, you should see that upon any commits into this repository, flux should have noticed about it and should have deployed your application / docker image into the Minikube cluster (or as a matter of fact in any of your Kubernetes cluster that you have under your possesion). On my machine, you can now see the new docker image up and running and ready to steam those pesky power plants!
-
-```
-Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
-NAMESPACE            NAME                               READY   STATUS    RESTARTS   AGE
-kube-system          coredns-6955765f44-7z9rg           1/1     Running   0          4h3m
-kube-system          coredns-6955765f44-zv425           1/1     Running   0          4h3m
-kube-system          etcd-minikube                      1/1     Running   0          4h3m
-kube-system          kube-apiserver-minikube            1/1     Running   0          4h3m
-kube-system          kube-controller-manager-minikube   1/1     Running   0          4h3m
-kube-system          kube-proxy-wf4sq                   1/1     Running   0          4h3m
-kube-system          kube-scheduler-minikube            1/1     Running   0          4h3m
-kube-system          storage-provisioner                1/1     Running   1          4h3m
-plant-simulator-ns   flux-5476b788b9-pgbmm              1/1     Running   0          135m
-plant-simulator-ns   memcached-86bdf9f56b-qc8vd         1/1     Running   0          135m
-plant-simulator-ns   plant-simulator-6d46dc89cb-f4bls   1/1     Running   0          40s
-```
-
-As you can see from the list of pods, our plant-simulator pod is up and running! If you found any issues reaching this point, have a look at some troubleshooting tips here:
+## Useful Hints & commands
 
 1. Check the logs of the flux operator:
 
