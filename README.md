@@ -222,7 +222,21 @@ plant-simulator-ns   memcached-86bdf9f56b-qc8vd         1/1     Running   0     
 plant-simulator-ns   plant-simulator-6d46dc89cb-f4bls   1/1     Running   0          40s
 ```
 
-As you can see from the list of pods, our plant-simulator pod is up and running! 
+As you can see from the list of pods, our plant-simulator pod is up and running! If you found any issues reaching this point, have a look at some troubleshooting tips here:
+
+1. Check the logs of the flux operator:
+
+```
+Joes-MacBook-Pro:deploy joesan$ kubectl logs -n plant-simulator-ns flux-5476b788b9-g7xtn
+```
+
+Where the ```flux-5476b788b9-g7xtn``` is the name of the flux operator pod running on your Kubernetes cluster. You can get this name by listing for all the pods in your cluster:
+
+```
+Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
+```
+
+Look for thee one that starts with flux-******
 
 ## Build & compose the Kubernetes resources using Kustomize
 

@@ -16,7 +16,7 @@ resources:
   #- monitoring/grafana/grrafana-service.yaml
 
   # 3. Set up Ingress service
-  - monitoring/plant-simulator-ingress-service.yaml
+  - application/plant-simulator-ingress-service.yaml
 
   # 4. Set up the application services (backend)
   - application/plant-simulator-namespace.yaml
