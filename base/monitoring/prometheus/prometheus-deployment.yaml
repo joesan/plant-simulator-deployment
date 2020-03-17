@@ -6,8 +6,8 @@ metadata:
 spec:
   replicas: 1
     selector:
-    matchLabels:
-      name: prometheus-server
+      matchLabels:
+        name: prometheus-server
   template:
     metadata:
       labels:
