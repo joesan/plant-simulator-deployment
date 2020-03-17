@@ -8,7 +8,7 @@ metadata:
 spec:
   ports:
     - port: 9000 
-      nodePort: 31002
+      #nodePort: 31002
       targetPort: 9000 
       protocol: TCP
       name: plant-simulator-service-port
