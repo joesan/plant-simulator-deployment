@@ -7,9 +7,9 @@ resources:
   - monitoring/plant-simulator-monitoring-namespace.yaml
 
   # 1. Set up monitoring services (prometheus)
-  #- monitoring/prometheus/config-map.yaml
-  #- monitoring/prometheus/prometheus-deployment.yaml
-  #- monitoring/prometheus/prometheus-service.yaml
+  - monitoring/prometheus/config-map.yaml
+  - monitoring/prometheus/prometheus-deployment.yaml
+  - monitoring/prometheus/prometheus-service.yaml
 
   # 2. Set up monitoring services (grafana)
   #- monitoring/grafana/grrafana-deployment.yaml
