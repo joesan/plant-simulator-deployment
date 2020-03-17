@@ -5,9 +5,9 @@ metadata:
   namespace: plant-simulator-monitoring
 spec:
   replicas: 1
-    selector:
-      matchLabels:
-        name: prometheus-server
+  selector:
+    matchLabels:
+      name: prometheus-server
   template:
     metadata:
       labels:
