@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: prometheus-deployment
-  namespace: default
+  namespace: plant-simulator-monitoring
 spec:
   replicas: 1
   template:
