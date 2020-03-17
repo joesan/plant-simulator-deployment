@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus-deployment
@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prometheus-server
+      name: prometheus-server
   template:
     metadata:
       labels:
-        app: prometheus-server
+        name: prometheus-server
     spec:
       containers:
         - name: prometheus
@@ -38,6 +38,5 @@ spec:
           configMap:
             defaultMode: 420
             name: prometheus-server-conf
-  
         - name: prometheus-storage-volume
           emptyDir: {}
