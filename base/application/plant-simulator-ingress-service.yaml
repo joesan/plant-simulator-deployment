@@ -16,14 +16,14 @@ spec:
       http:
         paths: 
           - backend: 
-              serviceName: grafana-ip-service
+              serviceName: plant-simulator-grafana
               servicePort: 8080
 
     - host: prometheus.local
       http:
         paths: 
           - backend: 
-              serviceName: prometheus-ip-service
+              serviceName: plant-simulator-prometheus
               servicePort: 8080 
 
     - host: plant-simulator.local

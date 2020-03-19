@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prometheus-deployment
+  name: plant-simulator-prometheus
   namespace: plant-simulator-monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: prometheus-server
+      name: plant-simulator-prometheus
   template:
     metadata:
       labels:
-        name: prometheus-server
+        name: plant-simulator-prometheus
     spec:
       containers:
         - name: prometheus
