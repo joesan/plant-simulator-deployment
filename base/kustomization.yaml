@@ -13,8 +13,8 @@ resources:
   - monitoring/prometheus/prometheus-service.yaml
 
   # 2. Set up monitoring services (grafana)
-  #- monitoring/grafana/grrafana-deployment.yaml
-  #- monitoring/grafana/grrafana-service.yaml
+  - monitoring/grafana/grrafana-deployment.yaml
+  - monitoring/grafana/grrafana-service.yaml
 
   # 3. Set up Ingress service
   - application/plant-simulator-ingress-service.yaml
