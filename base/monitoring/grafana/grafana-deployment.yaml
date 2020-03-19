@@ -17,12 +17,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        name: grafana
+        name: plant-simulator-grafana
     spec:
       containers:
       - image: grafana/grafana:6.6.2
         imagePullPolicy: IfNotPresent
-        name: grafana
+        name: plant-simulator-grafana
         ports:
         - containerPort: 3000
           protocol: TCP
