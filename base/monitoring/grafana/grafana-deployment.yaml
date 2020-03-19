@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    name: plant-simulator-grafana
   name: plant-simulator-grafana
   namespace: plant-simulator-monitoring
 spec:
