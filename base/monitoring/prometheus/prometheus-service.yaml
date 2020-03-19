@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prometheus-ip-service
+  name: plant-simulator-prometheus
   namespace: plant-simulator-monitoring
   # namespace: monitoring
   annotations:
@@ -11,7 +11,7 @@ metadata:
   
 spec:
   selector: 
-    app: prometheus-server
+    app: plant-simulator-prometheus
   type: ClusterIP  
   ports:
     - port: 8080

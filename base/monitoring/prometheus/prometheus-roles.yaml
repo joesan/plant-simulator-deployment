@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
-  name: prometheus
+  name: plant-simulator-prometheus
 rules:
 - apiGroups: [""]
   resources:
@@ -28,11 +28,11 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
-  name: prometheus
+  name: plant-simulator-prometheus
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: prometheus
+  name: plant-simulator-prometheus
 subjects:
 - kind: ServiceAccount
   name: default

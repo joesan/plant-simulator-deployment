@@ -9,6 +9,7 @@ resources:
   # 1. Set up monitoring services (prometheus)
   #- monitoring/prometheus/prometheus-roles.yaml
   - monitoring/prometheus/config-map.yaml
+  - monitoring/prometheus/prometheus-roles.yaml
   - monitoring/prometheus/prometheus-deployment.yaml
   - monitoring/prometheus/prometheus-service.yaml
 
