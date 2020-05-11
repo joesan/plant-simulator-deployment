@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: ValidateKubernetesYAML
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -21,10 +21,16 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Kubeval
+      uses: stefanprodan/kube-tools@v1.2.0
+      with:
+        kubectl: 1.16.2
+        kustomize: 3.4.0
+        helm: 2.16.1
+        helmv3: 3.0.0
+        command: |
+          echo "Run kubeval"
+          kubeval -d base --strict --ignore-missing-schemas
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
