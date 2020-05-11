@@ -73,4 +73,4 @@ With that step done, you can now access the application using the hostname. For 
 http://plant-simulator.local/plantsim/powerplants
 ```
 
-The above command will fetch the list of all Power Plants that are configured for this application. For more API's have a look [here](https://github.com/joesan/plant-simulator/wiki)
+The above command will fetch the list of all Power Plants that are configured for this application. For more API's on the plant-simulator application have a look [here](https://github.com/joesan/plant-simulator/wiki)
