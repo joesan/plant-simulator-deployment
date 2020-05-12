@@ -235,6 +235,8 @@ To do this, you just need a file called main.yaml (under .github/worlflows folde
     PASS - production/flux-patch.yaml contains a valid Deployment
     WARN - production/kustomization.yaml containing a Kustomization was not validated against a schema
 
+As you can see from the run above there are a couple of warnings and I can now decide to reject the pull request so that nothing goes into my master branch!
+
 ## Build & compose the Kubernetes resources using Kustomize
 
 Since our kubernetes resources are scattered across different files, for better organization we need a way to deploy them in an order and in many big projects this could get soon out of control. Fortunately, there is a project called [kustomization](https://github.com/kubernetes-sigs/kustomize) that you can use to compose the different resources into one big yml file that you can use to apply to your Kubernetes cluster. This is not needed to run this project, but I'm documenting this here just for educational piurposes. Calling the kustomize build is taken care by the flux operator as discussed in the step above.
