@@ -6,7 +6,7 @@ name: ValidateKubernetesYAML
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ feature-ci-tests ]
   pull_request:
     branches: [ master ]
 
