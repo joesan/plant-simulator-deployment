@@ -274,4 +274,4 @@ The whole project is licensed under Apache License, Version 2.0. See [LICENSE.tx
 ## Acknowledgments
 
 * To everybody that helped in this project
-* The [Kustomize](https://kustomize.io/)
+* The [Kustomize](https://kustomize.io/) project
