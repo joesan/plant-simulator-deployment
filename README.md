@@ -4,7 +4,7 @@ This is the deployment / infrastructure project for the plant-simulator digital 
 
 For a description / understanding of this project's folder structure and how to access the services / API's rendered by the plant-simulator application running inside the k8s cluster, have a look [here](https://github.com/joesan/plant-simulator-deployment/tree/master/base)
 
-This project contains all it is necessary to run the [plant-simulator](https://github.com/joesan/plant-simulator) application in a kubernetes cluster - the [GitOps](gitops.tech) way! 
+This project contains all it is necessary to run the [plant-simulator](https://github.com/joesan/plant-simulator) application in a kubernetes cluster - the [GitOps](gitops.tech) way! For scripts to set up the Kubernetes cluster on a cloud environment, have a look [here](https://github.com/joesan/k8s-infrastructure)
 
 ![GitOps Workflow](https://github.com/joesan/plant-simulator-deployment/blob/master/GitOps_Workflow.JPG)
 
