@@ -1,0 +1,12 @@
+apiVersion: v1
+name: plant-simulator-deployment-chart
+version: 1.0.0
+description: plant-simulator-deployment
+keywords:
+  - plant-simulator
+  - microservice
+home: https://github.com/joesan/plant-simulator-deployment
+maintainers:
+  - name: Joesan
+    email: https://github.com/joesan
+    url: https://www.bigelectrons.com
