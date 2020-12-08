@@ -2,7 +2,7 @@
 
 This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
-<ins>NOTE: </ins>The [Travis CI build pipeline](https://travis-ci.org/github/joesan/plant-simulator) for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. This somehow need to be passed on to the deployment yaml file. This is a task currently under TODO!
+<ins>NOTE:</ins>The [Travis CI build pipeline](https://travis-ci.org/github/joesan/plant-simulator) for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. This somehow need to be passed on to the deployment yaml file. This is a task currently under TODO!
 
 For a description / understanding of this project's folder structure and how to access the services / API's rendered by the plant-simulator application running inside the k8s cluster, have a look [here](https://github.com/joesan/plant-simulator-deployment/tree/master/base)
 
