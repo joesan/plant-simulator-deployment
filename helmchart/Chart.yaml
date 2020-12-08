@@ -1,11 +1,11 @@
 apiVersion: v1
-name: plant-simulator-deployment-chart
+name: plant-simulator
 version: 1.0.0
-description: plant-simulator-deployment
+description: Helm charts for plant-simulator project
 keywords:
   - plant-simulator
   - microservice
-home: https://github.com/joesan/plant-simulator-deployment
+home: https://github.com/joesan/plant-simulator
 maintainers:
   - name: Joesan
     email: https://github.com/joesan

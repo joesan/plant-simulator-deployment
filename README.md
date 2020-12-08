@@ -2,7 +2,9 @@
 
 This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
-<ins>NOTE:</ins>The [Travis CI build pipeline](https://travis-ci.org/github/joesan/plant-simulator) for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. This somehow need to be passed on to the deployment yaml file. This is a task currently under TODO!
+<ins>NOTE:</ins>The [Travis CI build pipeline](https://travis-ci.org/github/joesan/plant-simulator) for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. So if you head over to Docker hub [here](https://hub.docker.com/r/joesan/plant-simulator/tags?page=1&ordering=last_updated), 
+you will see that the latest tag version and the deployment-version.txt will be the same.
+This somehow need to be passed on to the deployment yaml file. This is a task currently under TODO! I hope with Helm, I might be able to inject the tag version from my CI builds.
 
 For a description / understanding of this project's folder structure and how to access the services / API's rendered by the plant-simulator application running inside the k8s cluster, have a look [here](https://github.com/joesan/plant-simulator-deployment/tree/master/base)
 
@@ -22,7 +24,7 @@ A typical workflow in this case (in this project, but applies equally good to an
 
 4. The tagged image from step 2 is then updated here in this project in one of the deployment files, depending on which application is being deployed
 
-5. Comit the deployment file and voila, your changes should be available in production within the next few minutes! It is here where the idea of GitOps really kick in. Good indeed or?
+5. Commit the deployment file and voila, your changes should be available in production within the next few minutes! It is here where the idea of GitOps really kick in. Good indeed or?
 
 ## Before you begin
 

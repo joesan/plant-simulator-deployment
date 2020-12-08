@@ -14,7 +14,7 @@ spec:
         app: plant-simulator
     spec:
       containers:
-        - name: plant-simulator
-          image: 'docker.io/joesan/plant-simulator:517'
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 9000 # Get this value from ConfigMap
