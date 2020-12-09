@@ -19,3 +19,5 @@
 .project
 .idea/
 *.tmproj
+# Markdown files
+*.md

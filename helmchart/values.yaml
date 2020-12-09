@@ -7,9 +7,10 @@ app:
   namespace: plant-simulator-ns
 
 plantSimulatorService:
-  image:
-    repository: docker.io/joesan/plant-simulator
+  deployment:
+    image: docker.io/joesan/plant-simulator
     tag: 636
+    containerPort: 9000
     pullPolicy: IfNotPresent
   service:
     namespace: plant-simulator
