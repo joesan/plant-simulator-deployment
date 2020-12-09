@@ -22,7 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Kubeval
-        uses: stefanprodan/kube-tools@v1.2.0
+        uses: stefanprodan/kube-tools@v1.5.0
         with:
           kubectl: 1.16.2
           kustomize: 3.4.0
@@ -33,7 +33,7 @@ jobs:
             # echo "Run conftest"
             # kustomize build helm/templates/base/kustomize | conftest test -p policy -
             echo "Run kubeval"
-            pwd
+            ls -la
             # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
             helm template helm | kubeval --strict
 
