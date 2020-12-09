@@ -19,18 +19,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    - name: Kubeval
-      uses: stefanprodan/kube-tools@v1.2.0
-      with:
-        kubectl: 1.16.2
-        kustomize: 3.4.0
-        helm: 2.16.1
-        helmv3: 3.0.0
-        command: |
-          # TODO: Under development
-          # echo "Run conftest"
-          # kustomize build helm/templates/base/kustomize | conftest test -p policy -
-          echo "Run kubeval"
-          kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Kubeval
+        uses: stefanprodan/kube-tools@v1.2.0
+        with:
+          kubectl: 1.16.2
+          kustomize: 3.4.0
+          helm: 2.16.1
+          helmv3: 3.0.0
+          command: |
+            # TODO: Under development
+            # echo "Run conftest"
+            # kustomize build helm/templates/base/kustomize | conftest test -p policy -
+            echo "Run kubeval"
+            helmv3 template ../../helm | kubeval --strict
+            #kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
