@@ -33,5 +33,7 @@ jobs:
             # echo "Run conftest"
             # kustomize build helm/templates/base/kustomize | conftest test -p policy -
             echo "Run kubeval"
+            pwd
+            # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
             helm template helm | kubeval --strict
-            #kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
+
