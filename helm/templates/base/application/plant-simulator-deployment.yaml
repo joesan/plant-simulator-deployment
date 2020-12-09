@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plant-simulator
+  name: {{ .Values.app.name }}
   namespace: {{ .Values.app.namespace }}
 spec:
   selector:
