@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
+  name: plant-simulator
   namespace: {{ .Values.app.namespace }}
 spec:
   selector:
@@ -14,7 +14,7 @@ spec:
         app: plant-simulator
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: plant-simulator
           image: {{ .Values.plantSimulatorService.image.repository }}:{{ .Values.plantSimulatorService.image.tag }}
           ports:
             - containerPort: {{ .Values.plantSimulatorService.ports.containerPort }} # Get this value from ConfigMap

@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: {{ .Values.plantSimulatorService.service.portName }}
   selector:
-    app: plant-simulator
+    app: {{ .Values.app.name }}
