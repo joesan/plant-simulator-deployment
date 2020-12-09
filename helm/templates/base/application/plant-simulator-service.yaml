@@ -6,6 +6,7 @@ metadata:
   labels:
     name: {{ .Values.plantSimulatorService.service.name }}
 spec:
+  type: {{ .Values.plantSimulatorService.service.type }}
   ports:
     - port: {{ .Values.plantSimulatorService.service.port }}
       targetPort: {{ .Values.plantSimulatorService.service.targetPort }}
