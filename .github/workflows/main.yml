@@ -12,8 +12,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "test"
+  test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,7 +32,6 @@ jobs:
             # TODO: Under development
             # echo "Run conftest"
             # kustomize build helm/templates/base/kustomize | conftest test -p policy -
-            echo "Run kubeval"
             ls -la
             # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
             helm template helm | kubeval --strict
