@@ -31,6 +31,6 @@ jobs:
         command: |
           # TODO: Under development
           # echo "Run conftest"
-          # kustomize build base/kustomize | conftest test -p policy -
+          # kustomize build helm/templates/base/kustomize | conftest test -p policy -
           echo "Run kubeval"
-          kubeval -d base,dev,production --force-color --strict --ignore-missing-schemas
+          kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
