@@ -212,34 +212,12 @@ Where the ```flux-5476b788b9-g7xtn``` is the name of the flux operator pod runni
 Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
 ```
 
-## Validate / Lint the Kubernetes YAML files
+## Test
 
-How to make sure that your YAML files are valid before Flux pulls them as soon as you commit them? One way to do this would be to lint it before you commit it, but you cannot enforce every single developer to do this step. So we automate this using [kube-tools](https://github.com/stefanprodan/kube-tools) and [GitHub Actions](https://github.com/features/actions)
+How to make sure that your YAML files are valid before Flux pulls them as soon as you commit them? One way to do this would be to lint it before you 
+commit it, but you cannot enforce every single developer to do this step. So we automate! Have a look [here](https://github.com/joesan/plant-simulator-deployment/test/)
 
 To do this, you just need a file called main.yaml (under .github/worlflows folder). GitHub runs this automatically as soon as any commit happens! A sample run of this for this project looks like below:
-
-    Run kubeval
-    WARN - Set to ignore missing schemas
-    PASS - base/application/plant-simulator-deployment.yaml contains a valid Deployment
-    PASS - base/application/plant-simulator-ingress-service.yaml contains a valid Ingress
-    PASS - base/application/plant-simulator-namespace.yaml contains a valid Namespace
-    PASS - base/application/plant-simulator-service.yaml contains a valid Service
-    WARN - base/kustomization.yaml containing a Kustomization was not validated against a schema
-    PASS - base/monitoring/grafana/grafana-deployment.yaml contains a valid Deployment
-    PASS - base/monitoring/grafana/grafana-service.yaml contains a valid Service
-    PASS - base/monitoring/plant-simulator-monitoring-namespace.yaml contains a valid Namespace
-    PASS - base/monitoring/prometheus/config-map.yaml contains a valid ConfigMap
-    PASS - base/monitoring/prometheus/prometheus-deployment.yaml contains a valid Deployment
-    PASS - base/monitoring/prometheus/prometheus-roles.yaml contains a valid ClusterRole
-    PASS - base/monitoring/prometheus/prometheus-roles.yaml contains a valid ServiceAccount
-    PASS - base/monitoring/prometheus/prometheus-roles.yaml contains a valid ClusterRoleBinding
-    PASS - base/monitoring/prometheus/prometheus-service.yaml contains a valid Service
-    PASS - dev/flux-patch.yaml contains a valid Deployment
-    WARN - dev/kustomization.yaml containing a Kustomization was not validated against a schema
-    PASS - production/flux-patch.yaml contains a valid Deployment
-    WARN - production/kustomization.yaml containing a Kustomization was not validated against a schema
-
-As you can see from the run above there are a couple of warnings and I can now decide to reject the pull request so that nothing goes into my master branch!
 
 ## Build & compose the Kubernetes resources using Kustomize
 
