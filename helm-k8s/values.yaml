@@ -8,14 +8,17 @@ app:
   namespace: plant-simulator-ns
 
 grafanaService:
+  component: monitoring
   name: plant-simulator-grafana
   port: 8080
 
 prometheusService:
+  component: monitoring
   name: plant-simulator-prometheus
   port: 8080
 
 plantSimulatorService:
+  component: server
   image:
     repository: docker.io/joesan/plant-simulator
     tag: 636
@@ -33,7 +36,7 @@ plantSimulatorService:
   ## Deploymenz Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   ##
-    securityContext:
-      enabled: true
-      fsGroup: 1001
-      runAsUser: 1001
+  securityContext:
+    enabled: true
+    fsGroup: 1001
+    runAsUser: 1001

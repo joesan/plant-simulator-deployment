@@ -1,13 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plant-simulator-grafana
   namespace: plant-simulator-monitoring
+  labels:
+    name: {{ .Values.grafanaService.name }}
+    component: {{ .Values.grafanaService.component }}
+    part-of: {{ .Values.grafanaService.name }}
+    managed-by: helm
+    instance: {{ .Values.grafanaService.name }}
+    version: {{ .Values.app.version }} # TODO: Better use the Grafana version
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: plant-simulator-grafana
+      app: plant-simulator-grafana
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -19,6 +25,11 @@ spec:
       labels:
         name: plant-simulator-grafana
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+        runAsNonRoot: true
       containers:
       - image: grafana/grafana:6.6.2
         imagePullPolicy: IfNotPresent
@@ -37,7 +48,6 @@ spec:
         - mountPath: /var/lib/grafana
           name: data
       restartPolicy: Always
-      securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
       - emptyDir: {}

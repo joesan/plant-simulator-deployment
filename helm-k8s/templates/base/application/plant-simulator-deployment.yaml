@@ -1,8 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
   namespace: {{ .Values.app.namespace }}
+  labels:
+    name: {{ .Values.app.name }}
+    #app: {{ .Values.app.name }}
+    component: {{ .Values.plantSimulatorService.component }}
+    part-of: {{ .Values.app.name }}
+    managed-by: helm
+    instance: {{ .Values.app.name }}
+    version: {{ .Values.app.version }}
 spec:
   selector:
     matchLabels:
@@ -17,6 +24,7 @@ spec:
         runAsUser: 1000
         runAsGroup: 3000
         fsGroup: 2000
+        runAsNonRoot: true
       containers:
         - name: {{ .Values.app.name }}
           image: {{ .Values.plantSimulatorService.image.repository }}:{{ .Values.plantSimulatorService.image.tag }}

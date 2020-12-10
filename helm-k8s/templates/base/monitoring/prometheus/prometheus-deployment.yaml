@@ -1,18 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: plant-simulator-prometheus
   namespace: plant-simulator-monitoring
+  labels:
+    name: {{ .Values.prometheusService.name }}
+    component: {{ .Values.prometheusService.component }}
+    part-of: {{ .Values.prometheusService.name }}
+    managed-by: helm
+    instance: {{ .Values.prometheusService.name }}
+    version: {{ .Values.app.version }} # TODO: Better use the Prometheus version
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: plant-simulator-prometheus
+      app: plant-simulator-prometheus
   template:
     metadata:
       labels:
         name: plant-simulator-prometheus
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+        runAsNonRoot: true
       containers:
         - name: prometheus
           image: prom/prometheus:latest
