@@ -4,5 +4,5 @@ kind: Deployment
 metadata:
   annotations:
     fluxcd.io/automated: "true"
-  name: plant-simulator
-  namespace: plant-simulator-ns
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.app.namespace }}

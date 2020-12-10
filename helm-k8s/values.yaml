@@ -1,0 +1,24 @@
+# Default values for plant-simulator-deployment
+
+replicaCount: 1
+
+app:
+  version: 636 # This should be injected by the Travis CI build of the plant-simulator project CI / CD pipeline
+  name: plant-simulator
+  namespace: plant-simulator-ns
+
+plantSimulatorService:
+  image:
+    repository: docker.io/joesan/plant-simulator
+    tag: 636
+    pullPolicy: IfNotPresent
+  ports:
+    containerPort: 8080
+  service:
+    name: plant-simulator-service
+    type: ClusterIP
+    port: 9000
+    portName: plant-simulator-service-port
+    targetPort: 9000
+  ingress:
+    host: ????
