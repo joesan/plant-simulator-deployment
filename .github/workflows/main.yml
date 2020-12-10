@@ -32,7 +32,7 @@ jobs:
             # TODO: Under development
             # echo "Run conftest"
             # kustomize build helm/templates/base/kustomize | conftest test -p policy -
-            ls -la
             # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
+            echo "Running heml template and kuvebal"
             helm template helm-k8s | kubeval --strict --force-color --ignore-missing-schemas
 
