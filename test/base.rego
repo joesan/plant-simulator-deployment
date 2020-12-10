@@ -1,7 +1,10 @@
 package main
 
 test_deployment_without_security_context {
-  deny["Containers must not run as root in Deployment sample"] with input as {"kind": "Deployment", "metadata": { "name": "sample" }}
+  input.kind == "Deployment"
+  not input.spec.template.spec.securityContext.runAsNonRoot
+
+  msg := "Containers must not run as root"
 }
 
 deny[msg] {
