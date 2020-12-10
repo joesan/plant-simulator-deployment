@@ -7,6 +7,14 @@ app:
   name: plant-simulator
   namespace: plant-simulator-ns
 
+grafanaService:
+  name: plant-simulator-grafana
+  port: 8080
+
+prometheusService:
+  name: plant-simulator-prometheus
+  port: 8080
+
 plantSimulatorService:
   image:
     repository: docker.io/joesan/plant-simulator

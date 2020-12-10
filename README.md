@@ -215,7 +215,7 @@ Joes-MacBook-Pro:~ joesan$ kubectl get pods --all-namespaces
 ## Test
 
 How to make sure that your YAML files are valid before Flux pulls them as soon as you commit them? One way to do this would be to lint it before you 
-commit it, but you cannot enforce every single developer to do this step. So we automate! Have a look [here](https://github.com/joesan/plant-simulator-deployment/test/)
+commit it, but you cannot enforce every single developer to do this step. So we automate! Have a look [here](https://github.com/joesan/plant-simulator-deployment/tree/master/test)
 
 To do this, you just need a file called main.yaml (under .github/worlflows folder). GitHub runs this automatically as soon as any commit happens! A sample run of this for this project looks like below:
 

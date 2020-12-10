@@ -16,19 +16,19 @@ spec:
       http:
         paths: 
           - backend: 
-              serviceName: plant-simulator-grafana
-              servicePort: 8080
+              serviceName: {{ .Values.grafanaService.name }}
+              servicePort: {{ .Values.grafanaService.port }}
 
     - host: prometheus.local
       http:
         paths: 
           - backend: 
-              serviceName: plant-simulator-prometheus
-              servicePort: 8080 
+              serviceName: {{ .Values.prometheusService.name }}
+              servicePort: {{ .Values.prometheusService.port }}
 
     - host: plant-simulator.local
       http:
         paths:
           - backend: 
-              serviceName: plant-simulator-service
-              servicePort: 9000 
+              serviceName: {{ .Values.plantSimulatorService.service.name }}
+              servicePort: {{ .Values.plantSimulatorService.service.port }}
