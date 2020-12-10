@@ -18,6 +18,10 @@ You could ofcourse run the conftest and kubeval locally on your machine before p
 
 TODO: Document usage
 
+To run conftest locally via helm, an additional helm plugin need to be installed (Assuming that you have already installed helm locally)
+
+- Install the helm-conftest plugin from here - https://github.com/instrumenta/helm-conftest
+
 ### Running kubeval
 
 Navigate to the root folder of this project and issue the following command:

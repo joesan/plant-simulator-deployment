@@ -13,8 +13,13 @@ spec:
       labels:
         app: {{ .Values.app.name }}
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
       containers:
         - name: {{ .Values.app.name }}
           image: {{ .Values.plantSimulatorService.image.repository }}:{{ .Values.plantSimulatorService.image.tag }}
           ports:
             - containerPort: {{ .Values.plantSimulatorService.ports.containerPort }} # Get this value from ConfigMap
+
