@@ -31,9 +31,10 @@ jobs:
           command: |
             # TODO: Currently Under development
             # We need this plugin to run conftest via helm
+            mkdir -p ~/.helm/plugins
             helm plugin install https://github.com/instrumenta/helm-conftest
             # echo "Run conftest"
-            # helm conftest helm-k8s -p test -o table
+            helm conftest helm-k8s -p test -o table
             # kustomize build helm/templates/base/kustomize | conftest test -p test -
             echo "Running heml template and kuvebal"
             helm template helm-k8s | kubeval --strict --force-color --ignore-missing-schemas
