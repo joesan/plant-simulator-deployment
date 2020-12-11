@@ -2,6 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    fluxPatchFile: devPatchFile
   annotations:
     fluxcd.io/automated: "true"
   name: {{ .Values.app.name }}

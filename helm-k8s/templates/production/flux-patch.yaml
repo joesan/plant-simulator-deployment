@@ -2,6 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    fluxPatchFile: prodPatchFile
   annotations:
     flux.weave.works/locked: "true"
     flux.weave.works/locked_msg: Lock deployment in production
