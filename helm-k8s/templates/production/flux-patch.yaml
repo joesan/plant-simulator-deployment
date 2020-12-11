@@ -2,11 +2,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: prod-{{ .Values.app.name }}
   labels:
+    app.kubernetes.io/name: {{ .Values.app.name }}
+    app.kubernetes.io/component: {{ .Values.plantSimulatorService.component }}
+    app.kubernetes.io/part-of: {{ .Values.app.name }}
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/instance: {{ .Values.app.name }}
+    app.kubernetes.io/version: {{ .Values.app.version }}
     fluxPatchFile: patchFile
   annotations:
     flux.weave.works/locked: "true"
     flux.weave.works/locked_msg: Lock deployment in production
     flux.weave.works/locked_user: Joesan <github.com/joesan>
-  name: plant-simulator-prod
   namespace: {{ .Values.app.namespace }}

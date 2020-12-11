@@ -1,14 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: plant-simulator-monitoring
   labels:
-    name: {{ .Values.prometheusService.name }}
-    component: {{ .Values.prometheusService.component }}
-    part-of: {{ .Values.prometheusService.name }}
-    managed-by: helm
-    instance: {{ .Values.prometheusService.name }}
-    version: {{ .Values.app.version }} # TODO: Better use the Prometheus version
+    app.kubernetes.io/name: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/component: {{ .Values.prometheusService.component }}
+    app.kubernetes.io/part-of: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/instance: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/version: {{ .Values.app.version }} # TODO: Better use the Prometheus version
+  name: prometheus-{{ .Values.app.name }}
+  namespace: plant-simulator-monitoring
 spec:
   replicas: 1
   selector:
@@ -20,13 +21,13 @@ spec:
         name: plant-simulator-prometheus
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
-        fsGroup: 2000
-        runAsNonRoot: true
+        runAsUser: {{  .Values.app.securityContext.runAsUser }}
+        runAsGroup: {{  .Values.app.securityContext.runAsGroup }}
+        fsGroup: {{  .Values.app.securityContext.fsGroup }}
+        runAsNonRoot: {{  .Values.app.securityContext.runAsNonRoot }}
       containers:
         - name: prometheus
-          image: prom/prometheus:latest
+          image: {{ .Values.prometheusService.image.repository}}:{{ .Values.prometheusService.image.tag}}
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
             - "--storage.tsdb.path=/prometheus/"
