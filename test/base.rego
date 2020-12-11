@@ -31,14 +31,14 @@ deny_run_as_root[msg] {
   kubernetes.is_deployment
   not input.spec.template.spec.securityContext.runAsNonRoot
 
-  msg = sprintf("Containers must not run as root in Deployment %s", [name])
+  msg = sprintf("Containers must not run as root in Deployment %s", [input.name])
 }
 
+# Exception for patch files
 exception[rules] {
   kubernetes.is_deployment
   label := input.metadata.labels.fluxPatchFile
   contains(label, "patchFile")
-  #label == "patchFile"
 
   rules := ["run_as_root", "deployment_selectors"]
 }
@@ -53,5 +53,5 @@ deny_deployment_selectors[msg] {
   kubernetes.is_deployment
   not required_deployment_selectors
 
-  msg = sprintf("Deployment %s must provide app selector labels for pod selectors", [name])
+  msg = sprintf("Deployment %s must provide app selector labels for pod selectors", [input.name])
 }

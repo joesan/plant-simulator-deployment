@@ -35,7 +35,6 @@ jobs:
             # echo "Run conftest"
             # helm conftest helm-k8s -p test -o table
             # kustomize build helm/templates/base/kustomize | conftest test -p test -
-            # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
             echo "Running heml template and kuvebal"
             helm template helm-k8s | kubeval --strict --force-color --ignore-missing-schemas
 

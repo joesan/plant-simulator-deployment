@@ -6,5 +6,4 @@ metadata:
     fluxPatchFile: patchFile
   annotations:
     fluxcd.io/automated: "true"
-  name: plant-simulator-dev
   namespace: {{ .Values.app.namespace }}

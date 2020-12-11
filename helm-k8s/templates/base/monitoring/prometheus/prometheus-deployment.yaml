@@ -20,13 +20,13 @@ spec:
         name: plant-simulator-prometheus
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
-        fsGroup: 2000
-        runAsNonRoot: true
+        runAsUser: {{  .Values.app.securityContext.runAsUser }}
+        runAsGroup: {{  .Values.app.securityContext.runAsGroup }}
+        fsGroup: {{  .Values.app.securityContext.fsGroup }}
+        runAsNonRoot: {{  .Values.app.securityContext.runAsNonRoot }}
       containers:
         - name: prometheus
-          image: prom/prometheus:latest
+          image: {{ .Values.prometheusService.image.repository}}:{{ .Values.prometheusService.image.tag}}
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
             - "--storage.tsdb.path=/prometheus/"
