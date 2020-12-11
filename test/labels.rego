@@ -2,8 +2,6 @@ package main
 
 import data.kubernetes
 
-name = input.metadata.name
-
 required_deployment_labels {
     input.metadata.labels["app.kubernetes.io/name"]
     input.metadata.labels["app.kubernetes.io/instance"]
@@ -16,17 +14,14 @@ required_deployment_labels {
 deny_required_labels[msg] {
   kubernetes.is_deployment
   not required_deployment_labels
-  msg = sprintf("%s must include Kubernetes recommended labels: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels", [name])
+
+  msg = sprintf("%s must include Kubernetes recommended labels: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels", [input.metadata.name])
 }
 
 exception[rules] {
   kubernetes.is_deployment
-  #label := input.metadata.labels[_].fluxPatchFile
-  #output := contains(label, "prodPatchFile")
-  input.metadata.name == "plant-simulator-dev"
-  #input.metadata.name == "plant-simulator-prod"
-  #sprintf("printed label is %s", [label])
-  #label == "fluxPatchFile"
-  #output == true
+  label := input.metadata.labels.fluxPatchFile
+  contains(label, "patchFile")
+
   rules := ["required_labels"]
 }

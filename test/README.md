@@ -22,6 +22,10 @@ To run conftest locally via helm, an additional helm plugin need to be installed
 
 - Install the helm-conftest plugin from here - https://github.com/instrumenta/helm-conftest
 
+Conftest uses Open Policy Agent for writing the tests in the Rego language. A nice place to play with it is the playground here:
+
+- https://play.openpolicyagent.org/p/qwwAdgbc6S
+
 ### Running kubeval
 
 Navigate to the root folder of this project and issue the following command:

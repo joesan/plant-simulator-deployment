@@ -2,6 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: prod-{{ .Values.app.name }}
   labels:
     fluxPatchFile: patchFile
   annotations:
@@ -9,4 +10,3 @@ metadata:
     flux.weave.works/locked_msg: Lock deployment in production
     flux.weave.works/locked_user: Joesan <github.com/joesan>
   namespace: {{ .Values.app.namespace }}
-  name: {{ .Values.app.name }}

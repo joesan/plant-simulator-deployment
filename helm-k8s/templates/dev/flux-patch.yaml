@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: dev-{{ .Values.app.name }}
   labels:
     fluxPatchFile: patchFile
   annotations:
     fluxcd.io/automated: "true"
   namespace: {{ .Values.app.namespace }}
-  name: {{ .Values.app.name }}
