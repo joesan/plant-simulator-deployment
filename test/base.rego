@@ -40,7 +40,7 @@ exception[rules] {
   label := input.metadata.labels.fluxPatchFile
   contains(label, "patchFile")
 
-  rules := ["run_as_root", "deployment_selectors"]
+  rules := ["run_as_root", "deployment_selectors", "required_labels"]
 }
 
 required_deployment_selectors {

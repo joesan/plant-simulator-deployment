@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
-  namespace: plant-simulator-monitoring
   labels:
-    name: {{ .Values.prometheusService.name }}
-    component: {{ .Values.prometheusService.component }}
-    part-of: {{ .Values.prometheusService.name }}
-    managed-by: helm
-    instance: {{ .Values.prometheusService.name }}
-    version: {{ .Values.app.version }} # TODO: Better use the Prometheus version
+    app.kubernetes.io/name: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/component: {{ .Values.prometheusService.component }}
+    app.kubernetes.io/part-of: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/instance: {{ .Values.prometheusService.name }}
+    app.kubernetes.io/version: {{ .Values.app.version }} # TODO: Better use the Prometheus version
+  name: prometheus-{{ .Values.app.name }}
+  namespace: plant-simulator-monitoring
 spec:
   replicas: 1
   selector:

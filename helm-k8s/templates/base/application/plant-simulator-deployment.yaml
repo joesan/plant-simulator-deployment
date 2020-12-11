@@ -4,12 +4,12 @@ metadata:
   name: {{ .Values.app.name }}
   namespace: {{ .Values.app.namespace }}
   labels:
-    name: {{ .Values.app.name }}
-    component: {{ .Values.plantSimulatorService.component }}
-    part-of: {{ .Values.app.name }}
-    managed-by: helm
-    instance: {{ .Values.app.name }}
-    version: {{ .Values.app.version }}
+    app.kubernetes.io/name: {{ .Values.app.name }}
+    app.kubernetes.io/component: {{ .Values.plantSimulatorService.component }}
+    app.kubernetes.io/part-of: {{ .Values.app.name }}
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/instance: {{ .Values.app.name }}
+    app.kubernetes.io/version: {{ .Values.app.version }}
 spec:
   selector:
     matchLabels:

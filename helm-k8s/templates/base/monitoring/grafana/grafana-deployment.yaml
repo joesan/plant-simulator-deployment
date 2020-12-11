@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app.name }}
+  name: grafana-{{ .Values.app.name }}
   namespace: plant-simulator-monitoring
   labels:
-    name: {{ .Values.grafanaService.name }}
-    component: {{ .Values.grafanaService.component }}
-    part-of: {{ .Values.grafanaService.name }}
-    managed-by: helm
-    instance: {{ .Values.grafanaService.name }}
-    version: {{ .Values.app.version }} # TODO: Better use the Grafana version
+    app.kubernetes.io/name: {{ .Values.grafanaService.name }}
+    app.kubernetes.io/component: {{ .Values.grafanaService.component }}
+    app.kubernetes.io/part-of: {{ .Values.grafanaService.name }}
+    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/instance: {{ .Values.grafanaService.name }}
+    app.kubernetes.io/version: {{ .Values.app.version }} # TODO: Better use the Grafana version
 spec:
   replicas: 1
   selector:
