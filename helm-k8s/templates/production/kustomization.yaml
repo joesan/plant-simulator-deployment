@@ -4,3 +4,4 @@ metadata:
   name: plant-simulator-kustomization
 resources:
 - ../base/
+namePrefix: prod-
