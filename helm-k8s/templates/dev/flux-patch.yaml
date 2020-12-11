@@ -7,3 +7,4 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
   namespace: {{ .Values.app.namespace }}
+  name: {{ .Values.app.name }}
