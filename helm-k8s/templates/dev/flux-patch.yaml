@@ -3,8 +3,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    fluxPatchFile: devPatchFile
+    fluxPatchFile: patchFile
   annotations:
     fluxcd.io/automated: "true"
-  name: {{ .Values.app.name }}
+  name: plant-simulator-dev
   namespace: {{ .Values.app.namespace }}

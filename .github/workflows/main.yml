@@ -33,7 +33,7 @@ jobs:
             # We need this plugin to run conftest via helm
             helm plugin install https://github.com/instrumenta/helm-conftest
             # echo "Run conftest"
-            # helm conftest helm-k8s -p test -i "*-patch.yaml"
+            # helm conftest helm-k8s -p test -o table
             # kustomize build helm/templates/base/kustomize | conftest test -p test -
             # kubeval -d helm/templates/base,helm/templates/dev,helm/templates/production --force-color --strict --ignore-missing-schemas
             echo "Running heml template and kuvebal"
