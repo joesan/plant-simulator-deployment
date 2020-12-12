@@ -1,9 +1,8 @@
 # Default values for plant-simulator-deployment
 
 replicaCount: 1
-
 app:
-  version: 636 # This should be injected by the Travis CI build of the plant-simulator project CI / CD pipeline
+  version: 640 # This should be injected by the Travis CI build of the plant-simulator project CI / CD pipeline
   name: plant-simulator
   namespace: plant-simulator-ns
   ## Deployment Security Context
@@ -15,12 +14,10 @@ app:
     runAsGroup: 3000
     fsGroup: 2000
     runAsNonRoot: true
-
 grafanaService:
   component: monitoring
   name: plant-simulator-grafana
   port: 8080
-
 prometheusService:
   component: monitoring
   name: plant-simulator-prometheus
@@ -28,7 +25,6 @@ prometheusService:
   image:
     repository: prom/prometheus
     tag: v2.23.0
-
 plantSimulatorService:
   component: server
   image:
