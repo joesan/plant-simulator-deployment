@@ -27,9 +27,8 @@ prometheusService:
     tag: v2.23.0
 plantSimulatorService:
   component: server
-  image:
+  image: # Docker tag will be the app.version
     repository: docker.io/joesan/plant-simulator
-    tag: 636
     pullPolicy: IfNotPresent
   ports:
     containerPort: 8080
