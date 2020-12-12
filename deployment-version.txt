@@ -1,1 +1,1 @@
-plant-simulator.version=644
+plant-simulator.version=656
