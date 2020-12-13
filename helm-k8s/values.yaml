@@ -2,7 +2,7 @@
 
 replicaCount: 1
 app:
-  version: v1.0.12 # This should be injected by the Travis CI build of the plant-simulator project CI / CD pipeline
+  version: v1.0.16 # This should be injected by the Travis CI build of the plant-simulator project CI / CD pipeline
   name: plant-simulator
   namespace: plant-simulator-ns
   ## Deployment Security Context
