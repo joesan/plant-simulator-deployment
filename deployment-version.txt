@@ -1,1 +1,1 @@
-plant-simulator.version=v1.0.10
+plant-simulator.version=v1.0.12
