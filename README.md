@@ -2,7 +2,7 @@
 
 This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
-<ins>NOTE:</ins>The [Travis CI build pipeline](https://travis-ci.org/github/joesan/plant-simulator) for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. So if you head over to Docker hub [here](https://hub.docker.com/r/joesan/plant-simulator/tags?page=1&ordering=last_updated), 
+<ins>NOTE:</ins>The Travis CI build pipeline for the plant-simulator project, upon successful build and docker push, will write a file in this repo called deployment-version.txt which contains the deployment version that we need to run in production. So if you head over to Docker hub [here](https://hub.docker.com/r/joesan/plant-simulator/tags?page=1&ordering=last_updated), 
 you will see that the latest tag version and the deployment-version.txt will be the same.
 This somehow need to be passed on to the deployment yaml file. This is a task currently under TODO! I hope with Helm, I might be able to inject the tag version from my CI builds.
 
