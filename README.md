@@ -1,5 +1,7 @@
 ## plant-simulator-deployment
 
+![validate k8s yaml files](https://github.com/joesan/plant-simulator-deployment/workflows/ValidateKubernetesYAML/badge.svg)
+
 <ins>NOTE:</ins> No direct development in the master branch. All development activities SHOULD happen on a feature-* branch or any other branch that is not a master.
 
 This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
