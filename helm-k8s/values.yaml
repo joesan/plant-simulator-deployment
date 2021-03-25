@@ -2,7 +2,7 @@
 
 replicaCount: 1
 app:
-  version: v0.0.7
+  version: refs/heads/master
   name: plant-simulator
   namespace: plant-simulator-ns
   ## Deployment Security Context
