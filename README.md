@@ -6,7 +6,7 @@
 
 This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
-<ins>NOTE:</ins>The [Travis CI build pipeline - Deprecated](https://travis-ci.org/github/joesan/plant-simulator/builds) or more relevant the 
+<ins>NOTE:</ins>The [Travis CI build pipeline - Cirrently Deprecated](https://travis-ci.org/github/joesan/plant-simulator/builds) or more relevant the 
 [GitHub Actions](https://github.com/joesan/plant-simulator/actions) for the [plant-simulator project](https://github.com/joesan/plant-simulator), upon successful build and docker push, will write a file in this repo called ***deployment-version.txt*** which contains the deployment version that we need to run in production. So if you head over to Docker hub [here](https://hub.docker.com/r/joesan/plant-simulator/tags?page=1&ordering=last_updated), 
 you will see that the latest tag version and the deployment-version.txt will be the same. Additionally, the values.yaml also gets this tag release version of the docker image updated via the Travis CI build for the plant-simulator project.
 
