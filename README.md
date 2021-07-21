@@ -4,7 +4,7 @@
 
 <ins>NOTE:</ins> No direct development in the master branch. All development activities SHOULD happen on a feature-* branch or any other branch that is not a master.
 
-This is the deployment / infrastructure project for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
+This project contains the deployment / infrastructure related code for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
 <ins>NOTE:</ins>The [Travis CI build pipeline - Cirrently Deprecated](https://travis-ci.org/github/joesan/plant-simulator/builds) or more relevant the 
 [GitHub Actions](https://github.com/joesan/plant-simulator/actions) for the [plant-simulator project](https://github.com/joesan/plant-simulator), upon successful build and docker push, will write a file in this repo called ***deployment-version.txt*** which contains the deployment version that we need to run in production. So if you head over to Docker hub [here](https://hub.docker.com/r/joesan/plant-simulator/tags?page=1&ordering=last_updated), 
