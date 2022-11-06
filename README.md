@@ -3,6 +3,7 @@
 This project contains the deployment / infrastructure related code for the plant-simulator digital twin project that can be found [here](https://github.com/joesan/plant-simulator) in my repository. 
 
 ![validate k8s yaml files](https://github.com/joesan/plant-simulator-deployment/workflows/ValidateKubernetesYAML/badge.svg)
+  [![HitCount](https://hits.dwyl.com/joesan/plant-simulator-deployment.svg?style=flat-square&show=unique)](http://hits.dwyl.com/joesan/plant-simulator-deployment)
 
 <ins>NOTE:</ins> No direct development in the master branch. All development activities SHOULD happen on a feature-* branch or any other branch that is not a master.
 
