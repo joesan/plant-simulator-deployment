@@ -226,7 +226,7 @@ To do this, you just need a file called [main.yaml](https://github.com/joesan/pl
 
 ## Build & compose the Kubernetes resources using Kustomize
 
-Since our kubernetes resources are scattered across different files, for better organization we need a way to deploy them in an order and in many big projects this could get soon out of control. Fortunately, there is a project called [kustomization](https://github.com/kubernetes-sigs/kustomize) that you can use to compose the different resources into one big yml file that you can use to apply to your Kubernetes cluster. This is not needed to run this project, but I'm documenting this here just for educational piurposes. Calling the kustomize build is taken care by the flux operator as discussed in the step above.
+Since our kubernetes resources are scattered across different files, for better organization we need a way to deploy them in an order and in many big projects this could get soon out of control. Fortunately, there is a project called [kustomize](https://github.com/kubernetes-sigs/kustomize) that you can use to compose the different resources into one big yml file that you can use to apply to your Kubernetes cluster. This is not needed to run this project, but I'm documenting this here just for educational piurposes. Calling the kustomize build is taken care by the flux operator as discussed in the step above.
 
 Note: kubectl latest version contains kustomization, so no need of any additional installation!
 
